@@ -254,3 +254,5 @@
 2021-07-21 14:13:39,907 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2021-07-21 14:13:39,907 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Project\docker\mattewCoffee\backend\demo\src\test\resources
 2021-07-21 14:17:48,216 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2021-07-21 14:17:48,343 [Worker-14: Launching demo] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Project\docker\mattewCoffee\backend\demo
+2021-07-21 14:17:48,345 [Worker-14: Launching demo] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package -Dstyle.color=always

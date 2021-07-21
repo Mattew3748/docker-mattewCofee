@@ -5,13 +5,7 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t lsh3748/react-test-app -f ./frontend/Dockerfile.dev ./frontend
-
 script:
-  - docker run -e CI=true lsh3748/react-test-app npm test
-
-after_success:
   - docker build -t lsh3748/docker-frontend ./frontend
   - docker build -t lsh3748/docker-backend ./backend
   - docker build -t lsh3748/docker-nginx ./nginx
@@ -25,10 +19,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: 'ap-northeast-2'
-  app: 'docker-fullstack-app'
-  env: 'DockerFullstackApp-env'
+  app: 'docker-mattew-coffee-app'
+  env: 'DockerMattewCofeeApp-env'
   bucket_name: elasticbeanstalk-ap-northeast-2-855031060233
-  bucket_path: 'docker-fullstack-app'
+  bucket_path: 'docker-mattew-coffee-app'
   on:
     branch: main
 
