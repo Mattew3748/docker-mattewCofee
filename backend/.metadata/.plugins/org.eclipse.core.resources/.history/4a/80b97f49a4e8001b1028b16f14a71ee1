@@ -1,0 +1,45 @@
+server: 
+  port: 8060
+
+logging:
+  level:
+    '[org.springframework]': info
+
+
+spring:
+  messages:
+    basename: messages
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate.format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    defer-datasource-initialization: true
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+#  datasource:
+#   url: jdbc:h2:mem:testdb
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mattewCoffee?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: mattew
+    password: lsc0109
+   
+   
+  mvc:
+   hiddenmethod:
+    filter:
+     enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        

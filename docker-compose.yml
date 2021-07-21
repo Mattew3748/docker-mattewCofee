@@ -1,0 +1,31 @@
+version: "3"
+services:
+  hk-mysql: #서비스명
+    restart: always
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mattewCoffee
+      MYSQL_ROOT_PASSWORD: lsc0109
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - ../db:/var/lib/mysql
+      #- db:/var/lib/mysql # insert, update 데이터 컨테이너 내려가면 다 날라감.
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci
+
+  backend:
+    restart: always
+    build: ./backend/demo/.
+    ports:
+      - "8060:8060"
+    depends_on:
+      - hk-mysql
+
+  frontend:
+    restart: always
+    build: ./frontend/.
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
