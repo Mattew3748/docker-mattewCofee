@@ -13,7 +13,7 @@ script:
 
 after_success:
   - docker build -t lsh3748/docker-frontend ./frontend
-  - docker build -t lsh3748/docker-backend ./backend
+  - docker build -t lsh3748/docker-backend ./backend/demo
   - docker build -t lsh3748/docker-nginx ./nginx
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin

@@ -20,11 +20,11 @@ services:
   backend:
     build:
       dockerfile: Dockerfile
-      context: ./backend
+      context: ./backend/demo
     container_name: app_backend
     volumes:
       - /app/node_modules
-      - ./backend:/app
+      - ./backend/demo:/app
 
   mysql:
     build: ./mysql
